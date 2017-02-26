@@ -1,0 +1,15 @@
+<h2 class="text-center">Authors</h2>
+<hr></hr>
+<% import Ecto.Query %>
+<% alias FastBlog.Repo %>
+<ul class="list-group">
+  <%= for user <- @users do %>
+    <li class="list-group-item">
+      <span class="badge"><%= length(Repo.all(from p in "posts", where: p.username == ^user.username, select: p.title))%></span>
+      <%= link user.username, to: user_path(@conn, :show, user.id) %>
+    </li>
+  <% end %>
+</ul>
+
+
+

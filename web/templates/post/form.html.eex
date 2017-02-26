@@ -1,0 +1,35 @@
+<%= form_for @changeset, @action, fn f -> %>
+  <%= if @changeset.action do %>
+    <div class="alert alert-danger">
+      <p>Oops, something went wrong! Please check the errors below.</p>
+    </div>
+  <% end %>
+
+  <div class="form-group hidden">
+    <%= label f, :username, class: "control-label" %>
+    <%= text_input f, :username, class: "form-control", value: current_user(@conn).username %>
+    <%= error_tag f, :username %>
+  </div>
+
+  <div class="form-group">
+    <%= label f, :title, class: "control-label" %>
+    <%= text_input f, :title, class: "form-control" %>
+    <%= error_tag f, :title %>
+  </div>
+
+  <div class="form-group hidden">
+    <%= label f, :date, class: "control-label" %>
+    <%= datetime_select f, :date, class: "form-control", value: Ecto.DateTime.utc %>
+    <%= error_tag f, :date %>
+  </div>
+
+  <div class="form-group">
+    <%= label f, :content, class: "control-label" %>
+    <%= textarea f, :content, class: "form-control", rows: 10 %>
+    <%= error_tag f, :content %>
+  </div>
+
+  <div class="form-group">
+    <%= submit "Submit", class: "btn btn-primary" %>
+  </div>
+<% end %>

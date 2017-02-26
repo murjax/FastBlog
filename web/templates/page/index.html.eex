@@ -1,0 +1,6 @@
+
+
+<div class="jumbotron">
+  <h1 class="display-3">Welcome to FastBlog</h1>
+  <p>A simple blog built on Elixir Phoenix to be a faster alternative to a traditional Ruby on Rails blog.</p>
+</div>

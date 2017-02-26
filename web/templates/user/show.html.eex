@@ -1,0 +1,8 @@
+<h2 class="text-center">Posts from <%= @user.username %></h2>
+<hr></hr>
+<%= for post <- @posts do %>
+<div class="container">
+  <h4><%= link post.title, to: post_path(@conn, :show, post.id) %></h4>
+  <p>Posted <%= elem(elem(post.date, 0),1) %>/<%= elem(elem(post.date, 0),2)%></p>
+</div>
+<% end %>

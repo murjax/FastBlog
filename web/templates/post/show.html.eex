@@ -1,0 +1,8 @@
+<h2><%= @post.title %></h2>
+<h4>By <%= @post.username %></h4>
+<hr></hr>
+<p>Posted <%= @post.date %></p>
+<hr></hr>
+<p> <%= @post.content %> </p>
+
+
